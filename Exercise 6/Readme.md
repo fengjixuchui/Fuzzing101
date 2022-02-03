@@ -118,7 +118,7 @@ Don't worry if you see some error messages in the testing stage.
 Now, we download and uncompress GIMP 2.8.16:
 ```
 cd ..
-wget https://mirror.klaus-uwe.me/gimp/gimp/v2.8/gimp-2.8.16.tar.bz2
+wget https://mirror.klaus-uwe.me/gimp/pub/gimp/v2.8/gimp-2.8.16.tar.bz2
 tar xvf gimp-2.8.16.tar.bz2 && cd gimp-2.8.16/
 ```
   
@@ -166,7 +166,7 @@ ASAN_OPTIONS=detect_leaks=0,abort_on_error=1,symbolize=0 afl-fuzz -i './afl_in' 
 Some notes:
 - `gimp-console-2.8` is a console-only version of GIMP
 - I recommend enabling deterministic mutations (-D)
-- There is also an infinite loop bug in the code, so we need to set a low timeout limit (-t 100)
+- There is also an infinite loop bug in the code, so we need to set a low timeout limit (ex. -t 100). This timeout limit depends on your machine capabilites, so you will need to adjust it for your particular case.
 
   
 After a while, you should have multiple crashes:
